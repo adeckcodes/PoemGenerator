@@ -7,36 +7,41 @@
     <title>AI Poem Generator</title>
   </head>
   <body>
-    <header><h1>AI poem generator</h1></header>
-    <main>
-      <form>
-        <input
-          type="text"
-          placeholder="enter the topic of the poem"
-          autofocus
-          required
-          autocomplete="off"
-        />
-        <input type="submit" />
-      </form>
-      <div>
-        roses are red
-        <br />
-        violets are blue
-      </div>
-    </main>
-    <footer>
-      This AI project was coded by
-      <a href="https://github.com/adeckcodes" target="_blank"> Alyssa Deck </a>
-      and is
-      <a href="https://github.com/adeckcodes/PoemGenerator" target="blank">
-        open-sourced on GitHub
-      </a>
-      and is hosted on
-      <a href="https://poemgeneratoradeck.netlify.app/" target="blank">
-        Netlify</a
-      >
-    </footer>
+    <div class="container">
+      <header><h1>AI Poem Generator</h1></header>
+      <main>
+        <form>
+          <input
+            type="text"
+            placeholder="enter the topic of the poem"
+            autofocus
+            required
+            autocomplete="off"
+            class="instructions"
+          />
+          <input type="submit" class="submit-button" />
+        </form>
+        <div class="poem">
+          roses are red
+          <br />
+          violets are blue
+        </div>
+      </main>
+      <footer>
+        This AI project was coded by
+        <a href="https://github.com/adeckcodes" target="_blank">
+          Alyssa Deck
+        </a>
+        and is
+        <a href="https://github.com/adeckcodes/PoemGenerator" target="blank">
+          open-sourced on GitHub
+        </a>
+        and is hosted on
+        <a href="https://poemgeneratoradeck.netlify.app/" target="blank">
+          Netlify</a
+        >
+      </footer>
+    </div>
     <script src="src/index.js"></script>
   </body>
 </html>
