@@ -1,12 +1,27 @@
-function generatePoem(event) {
-  event.preventDefault();
-
+function displayPoem(response) {
   new Typewriter("#poem", {
-    strings: " roses are red, violets are blue",
+    strings: response.data.answer,
     autoStart: true,
     delay: 1,
     cursor: "",
   });
+}
+
+function generatePoem(event) {
+  event.preventDefault();
+
+  let instructionsInput = document.querySelector("#user-instructions");
+  let apiKey = "od1bt5abbfa66847bb8014cbf1b4430c";
+  let context =
+    "You are a romantic poem expert and love to write short poems. Your mission is to generate a four line poem and separate each line with a <br /> except for the last line. Make sure to follow the user instructions.";
+  let prompt = `User instructions: Generate a poem about ${instructionsInput.value}`;
+  let apiURL = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
+
+  console.log("generating poem");
+  console.log(`prompt: ${prompt}`);
+  console.log(`context: ${context}`);
+
+  axios.get(apiURL).then(displayPoem);
 }
 
 let poemFormElement = document.querySelector("#poem-generator-form");
